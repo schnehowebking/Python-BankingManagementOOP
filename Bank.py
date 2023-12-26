@@ -1,4 +1,4 @@
-import random
+import secrets
 
 class Bank:
     def __init__(self):
@@ -8,9 +8,9 @@ class Bank:
         self.loan_amount = 0
 
     def create_user_account(self, name, email, address, account_type):
-        account_number = random.randint(10000, 99999)
+        account_number = secrets.SystemRandom().randint(10000, 99999)
         while account_number in self.users:
-            account_number = random.randint(10000, 99999)
+            account_number = secrets.SystemRandom().randint(10000, 99999)
 
         user = User(account_number, name, email, address, account_type)
         self.users[account_number] = user
