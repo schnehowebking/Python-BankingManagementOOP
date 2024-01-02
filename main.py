@@ -7,11 +7,9 @@ while True:
     print("1. Admin Portal")
     print("2. User Portal")
     print("3. Exit")
-    choice = input("Enter your choice: ")
 
-    if choice == "1":
-        admin_password = input("Enter admin password (admin): ")
-        if admin_password == "admin":
+    if (choice := input("Enter your choice: ")) == "1":
+        if (admin_password := input("Enter admin password (admin): ")) == "admin":
             print("\nAdmin Menu:")
             print("1. Create User Account")
             print("2. Delete User Account")
@@ -20,9 +18,8 @@ while True:
             print("5. Check Total Loan Amount")
             print("6. Turn Loan Feature On/Off")
             print("7. Logout")
-            admin_option = input("Enter your choice: ")
 
-            if admin_option == "1":
+            if (admin_option := input("Enter your choice: ")) == "1":
                 name = input("Enter user's name: ")
                 email = input("Enter user's email: ")
                 address = input("Enter user's address: ")
